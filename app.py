@@ -29,6 +29,13 @@ class Car(db.Model):
 db.create_all()
 
 
+@app.route('/plate', methods=['GET'])
+def get_plate():
+    cars = db.session.query(Car).all()
+    car_plates = [elem.serialized for elem in cars]
+    return jsonify(car_plates)
+
+
 @app.route('/plate', methods=['POST'])
 def post_plate():
     return check_request_validity(request)
