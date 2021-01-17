@@ -8,6 +8,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
 
+plates = {}
+
 
 class Car(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -18,6 +20,14 @@ class Car(db.Model):
         self.plate = plate
         ts = datetime.datetime.now().timestamp()
         self.request_time = str(datetime.datetime.fromtimestamp(ts).isoformat())
+
+    @property
+    def serialized(self):
+        """Return object data in serializeable format"""
+        return {
+            'plate': self.plate,
+            'timestamp': self.request_time
+        }
 
     def __str__(self):
         return '{self.plate}'.format(self=self)
@@ -38,7 +48,21 @@ def get_plate():
 
 @app.route('/plate', methods=['POST'])
 def post_plate():
-    return check_request_validity(request)
+    response = check_request_validity(request)
+    return response
+
+
+@app.route('/plate/<plate_id>', methods=['DELETE'])
+def delete_plate(plate_id):
+
+    car = Car.query.filter_by(plate=plate_id).first()
+
+    if car is None:
+        return jsonify({"msg": "Plate " + plate_id + " is not registered"}), 409
+
+    db.session.delete(car)
+    db.session.commit()
+    return jsonify({"msg": "plate " + plate_id + " is deleted successfully"}), 200
 
 
 def check_request_validity(coming_request):
