@@ -43,7 +43,7 @@ Valid plates are written to database. Error is checked for database. 502 status 
         return False
         
  # Frontend
- 
+ ![Frontend Logo](/docs/frontend.png "Frontend")
 
 
 
