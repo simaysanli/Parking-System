@@ -5,16 +5,16 @@ The goal of the task is to build a simple backend application that accepts valid
 
 ## Features
 * [Flask-RestPlus](http://flask-restplus.readthedocs.io) API with class-based secure resource routing
-* [vue-cli 3](https://github.com/vuejs/vue-cli/blob/dev/docs/README.md) + yarn
+* [vue-cli 3]
 * [Vue Router](https://router.vuejs.org/)
 * [Axios](https://github.com/axios/axios/) for backend communication
 
 # Usage
 Flask and sqlalchemy are required some imports to use.
 
-from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import exc
+from flask import Flask, request, jsonify<br />
+from flask_sqlalchemy import SQLAlchemy<br />
+from sqlalchemy import exc<br />
 
 # GET
 /plate
