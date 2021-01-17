@@ -17,17 +17,17 @@ from flask_sqlalchemy import SQLAlchemy<br />
 from sqlalchemy import exc<br />
 
 # GET
-/plate
+/plate <br />
 Posted plates are viewed with get request.
 
 # POST
-/plate
+/plate <br />
 Request is checked according to some restrictions using regex in Python.
 * Missing field (plate) and missing request are controlled and this conditions return 400 status code.
 * German plate is controlled by validity conditions. If the plate is valid, it returns 200 status code. If plate isn't valid, it returns 422 status code.
 
 # DELETE
-/plate/<plate_id>
+/plate/<plate_id> <br />
 Posted plate is deleted if plate is exist. 
 
 # Database
