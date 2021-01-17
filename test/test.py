@@ -13,9 +13,9 @@ class PlateTest(unittest.TestCase):
         #SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/deneme.db'
         #self.db = db.create_all()
 
-    def tearDown(self):
-        self.db.session.remove()
-        self.db.drop_all()
+    #def tearDown(self):
+        #self.db.session.remove()
+        #self.db.drop_all()
 
     def test_get_valid_plate(self):
         response = self.app.get('/plate', headers={"Content-Type": "application/json"})
@@ -60,7 +60,7 @@ class PlateTest(unittest.TestCase):
 
     def test_second_part_alphabet_invalid_plate(self):
         # Given
-        x = {"plate": "M-AA123"}
+        x = {"plate": "S-AA123"}
         plate = json.dumps(x)
         current_car = Car(x['plate'])
         # When
@@ -93,6 +93,7 @@ class PlateTest(unittest.TestCase):
         self.assertEqual(type("Plate " + x["plate"] + " is not registered"), type(delete_response.json['msg']))
         self.assertEqual("Plate " + x["plate"] + " is not registered", delete_response.json['msg'])
         self.assertEqual(409, delete_response.status_code)
+
 
 
 if __name__ == '__main__':
