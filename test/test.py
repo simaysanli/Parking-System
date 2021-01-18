@@ -95,6 +95,5 @@ class PlateTest(unittest.TestCase):
         self.assertEqual(409, delete_response.status_code)
 
 
-
 if __name__ == '__main__':
     unittest.main()
