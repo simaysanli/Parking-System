@@ -29,7 +29,24 @@ Common response codes indicating success, failure due to client-side problem, fa
 /plate <br />
 Posted plates are viewed with get request.
 
-![Data Structure](/docs/data_structure.png "Data Structure")
+	[
+	    {
+		"plate": "ÄE-A2574",
+		"timestamp": "2021-01-18T13:52:46Z"
+	    },
+	    {
+		"plate": "MÄ-BB1474",
+		"timestamp": "2021-01-18T13:53:30Z"
+	    },
+	    {
+		"plate": "S-AA123",
+		"timestamp": "2021-01-18T13:53:52Z"
+	    },
+	    {
+		"plate": "AE-A123",
+		"timestamp": "2021-01-18T13:54:12Z"
+	    }
+	]
 
 # POST
 /plate <br />
@@ -133,7 +150,7 @@ Valid plates are written to database. Error is checked for database. 502 status 
  # Frontend
  Posted plates are viewed in frontend application.
  
- ![Frontend Logo](/docs/output.png "Frontend")
+ ![Frontend Logo](/docs/get_results.png "Frontend")
 
 
 
