@@ -5,7 +5,7 @@ The goal of the task is to build a simple backend application that accepts valid
 
 ## Features
 * [Flask-RestPlus](http://flask-restplus.readthedocs.io) API with class-based secure resource routing
-* [vue-cli 3]
+* [Vue.js](https://vuejs.org/)
 * [Vue Router](https://router.vuejs.org/)
 * [Axios](https://github.com/axios/axios/) for backend communication
 
