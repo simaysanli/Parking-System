@@ -136,7 +136,7 @@ Response:
 	    "msg": "plate ÄBE-AA231 is deleted successfully"
 	}
 
-409 status code and message are returned if plate is not registered in database.
+409 status code and message are returned if plate is not registered in database for plate/BE-A231 delete operation.
 
 Response:
 
