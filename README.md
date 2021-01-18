@@ -30,34 +30,34 @@ Request is checked according to some restrictions using regex in Python.
 
 Plate is inserted as ÄE-A2574. 200 status code is returned.
 
-{
-	"plate": "ÄE-A2574"
-}
+	{
+		"plate": "ÄE-A2574"
+	}
 
 
-{
-    "msg": "the ÄE-A2574 is a valid German plate"
-}
+	{
+	    "msg": "the ÄE-A2574 is a valid German plate"
+	}
 
 Plate is inserted as ÄE-A0574. 422 status code is returned.
 
-{
-	"plate": "ÄE-A0574"
-}
+	{
+		"plate": "ÄE-A0574"
+	}
 
-{
-    "msg": "the ÄE-A0574 is not a valid German plate"
-}
+	{
+	    "msg": "the ÄE-A0574 is not a valid German plate"
+	}
 
 Plate is inserted as ÄBE-AA231. 200 status code is returned.
 
-{
-	"plate": "ÄBE-AA231"
-}
+	{
+		"plate": "ÄBE-AA231"
+	}
 
-{
-    "msg": "the ÄBE-AA231 is a valid German plate"
-}
+	{
+	    "msg": "the ÄBE-AA231 is a valid German plate"
+	}
 
 # DELETE
 /plate/<plate_id> <br />
