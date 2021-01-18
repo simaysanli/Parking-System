@@ -16,7 +16,15 @@ from flask import Flask, request, jsonify<br />
 from flask_sqlalchemy import SQLAlchemy<br />
 from sqlalchemy import exc<br />
 
-# 
+# Error handling
+Common response codes indicating success, failure due to client-side problem, failure due to server-side problem:
+* 200 - OK
+* 400 - Bad Request
+* 402 - Invalid Request
+* 409 - Conflict Error
+* 500 - Internal Server Error
+* 502 - Internal Server Error
+
 # GET
 /plate <br />
 Posted plates are viewed with get request.
@@ -75,14 +83,6 @@ Posted plate is deleted if plate is exist.
 	    "msg": "Plate BE-A231 is not registered"
 	}
 	
-# Error handling
-* 200 - OK
-* 400 - Bad Request
-* 402 - Invalid Request
-* 409 - Conflict Error
-* 500 - Internal Server Error
-* 502 - Internal Server Error
-
 # Database
 Valid plates are written to database. Error is checked for database. 502 status code is returned in case of internal error. If plate is written to database successfully, 200 status code is returned.
 
