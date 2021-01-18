@@ -39,10 +39,13 @@ Request is checked according to some restrictions using regex in Python.
 
 Plate is inserted as ÄE-A2574. 200 status code and message are returned.
 
+Request:
+
 	{
 		"plate": "ÄE-A2574"
 	}
 
+Response:
 
 	{
 	    "msg": "the ÄE-A2574 is a valid German plate"
@@ -50,9 +53,13 @@ Plate is inserted as ÄE-A2574. 200 status code and message are returned.
 
 Plate is inserted as ÄE-A0574. 422 status code and message are returned.
 
+Request:
+
 	{
 		"plate": "ÄE-A0574"
 	}
+
+Response:
 
 	{
 	    "msg": "the ÄE-A0574 is not a valid German plate"
@@ -60,9 +67,13 @@ Plate is inserted as ÄE-A0574. 422 status code and message are returned.
 
 Plate is inserted as ÄBE-AA231. 200 status code and message are returned.
 
+Request:
+
 	{
 		"plate": "ÄBE-AA231"
 	}
+
+Response:
 
 	{
 	    "msg": "the ÄBE-AA231 is a valid German plate"
@@ -73,11 +84,15 @@ Plate is inserted as ÄBE-AA231. 200 status code and message are returned.
 Posted plate is deleted if plate is exist. 
 200 status code and message are returned for plate/ÄBE-AA231 delete operation.
 
+Response:
+
 	{
 	    "msg": "plate ÄBE-AA231 is deleted successfully"
 	}
 
 409 status code and message are returned if plate is not registered in database.
+
+Response:
 
 	{
 	    "msg": "Plate BE-A231 is not registered"
