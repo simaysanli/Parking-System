@@ -19,6 +19,7 @@ from sqlalchemy import exc<br />
 # GET
 /plate <br />
 Posted plates are viewed with get request.
+
 ![Data Structure](/docs/data_structure.png "Data Structure")
 
 # POST
@@ -27,6 +28,37 @@ Request is checked according to some restrictions using regex in Python.
 * Missing field (plate) and missing request are controlled and this conditions return 400 status code.
 * German plate is controlled by validity conditions. If the plate is valid, it returns 200 status code. If plate isn't valid, it returns 422 status code.
 
+Plate is inserted as ÄE-A2574. 200 status code is returned.
+
+{
+	"plate": "ÄE-A2574"
+}
+
+
+{
+    "msg": "the ÄE-A2574 is a valid German plate"
+}
+
+Plate is inserted as ÄE-A0574. 422 status code is returned.
+
+{
+	"plate": "ÄE-A0574"
+}
+
+{
+    "msg": "the ÄE-A0574 is not a valid German plate"
+}
+
+Plate is inserted as ÄBE-AA231. 200 status code is returned.
+
+{
+	"plate": "ÄBE-AA231"
+}
+
+{
+    "msg": "the ÄBE-AA231 is a valid German plate"
+}
+
 # DELETE
 /plate/<plate_id> <br />
 Posted plate is deleted if plate is exist. 
@@ -34,15 +66,6 @@ Posted plate is deleted if plate is exist.
 # Database
 Valid plates are written to database. Error is checked for database. 502 status code is returned in case of internal error. If plate is written to database successfully, 200 status code is returned.
 
-    try:
-        db.session.add(car)
-        db.session.commit()
-        return True
-    except exc.SQLAlchemyError as e:
-        db.session.rollback()
-        db.session.flush()
-        return False
-        
  # Frontend
  Posted plates are viewed in frontend application.
  ![Frontend Logo](/docs/frontend.png "Frontend")
