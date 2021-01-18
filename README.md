@@ -16,6 +16,7 @@ from flask import Flask, request, jsonify<br />
 from flask_sqlalchemy import SQLAlchemy<br />
 from sqlalchemy import exc<br />
 
+# 
 # GET
 /plate <br />
 Posted plates are viewed with get request.
@@ -28,7 +29,7 @@ Request is checked according to some restrictions using regex in Python.
 * Missing field (plate) and missing request are controlled and this conditions return 400 status code.
 * German plate is controlled by validity conditions. If the plate is valid, it returns 200 status code. If plate isn't valid, it returns 422 status code.
 
-Plate is inserted as ÄE-A2574. 200 status code is returned.
+Plate is inserted as ÄE-A2574. 200 status code and message are returned.
 
 	{
 		"plate": "ÄE-A2574"
@@ -39,7 +40,7 @@ Plate is inserted as ÄE-A2574. 200 status code is returned.
 	    "msg": "the ÄE-A2574 is a valid German plate"
 	}
 
-Plate is inserted as ÄE-A0574. 422 status code is returned.
+Plate is inserted as ÄE-A0574. 422 status code and message are returned.
 
 	{
 		"plate": "ÄE-A0574"
@@ -49,7 +50,7 @@ Plate is inserted as ÄE-A0574. 422 status code is returned.
 	    "msg": "the ÄE-A0574 is not a valid German plate"
 	}
 
-Plate is inserted as ÄBE-AA231. 200 status code is returned.
+Plate is inserted as ÄBE-AA231. 200 status code and message are returned.
 
 	{
 		"plate": "ÄBE-AA231"
@@ -62,6 +63,25 @@ Plate is inserted as ÄBE-AA231. 200 status code is returned.
 # DELETE
 /plate/<plate_id> <br />
 Posted plate is deleted if plate is exist. 
+200 status code and message are returned for plate/ÄBE-AA231 delete operation.
+
+	{
+	    "msg": "plate ÄBE-AA231 is deleted successfully"
+	}
+
+409 status code and message are returned if plate is not registered in database.
+
+	{
+	    "msg": "Plate BE-A231 is not registered"
+	}
+	
+# Error handling
+* 200 - OK
+* 400 - Bad Request
+* 402 - Invalid Request
+* 409 - Conflict Error
+* 500 - Internal Server Error
+* 502 - Internal Server Error
 
 # Database
 Valid plates are written to database. Error is checked for database. 502 status code is returned in case of internal error. If plate is written to database successfully, 200 status code is returned.
