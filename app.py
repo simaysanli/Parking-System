@@ -19,7 +19,7 @@ class Car(db.Model):
     def __init__(self, plate):
         self.plate = plate
         ts = datetime.datetime.now().timestamp()
-        self.request_time = str(datetime.datetime.fromtimestamp(ts).isoformat())
+        self.request_time = str(datetime.datetime.fromtimestamp(ts).isoformat()[:-7] + 'Z')
 
     @property
     def serialized(self):
@@ -43,7 +43,9 @@ db.create_all()
 def get_plate():
     cars = db.session.query(Car).all()
     car_plates = [elem.serialized for elem in cars]
-    return jsonify(car_plates)
+    response = jsonify(car_plates)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 @app.route('/plate', methods=['POST'])
