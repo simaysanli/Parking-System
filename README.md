@@ -1,5 +1,5 @@
 # Plate Project
-The goal of the task is to build a simple backend application that accepts valid German license plates, stores them in a database and provides an endpoint to retrieve all stored plates. This project consists in a RESTful api and a frontend to consume this API. Flask web framework, SQLAlchemy as ORM were used. Frontend was created by Vue.js framework. The frontend was build using VueJS and Bootstrap. You can view plates.
+The goal of the task is to build a simple backend application that accepts valid German license plates, stores them in a database and provides an endpoint to retrieve all stored plates. This project consists in a RESTful api and a frontend to consume this API. Flask web framework, SQLAlchemy as ORM were used. Frontend is created by Vue.js framework. The frontend is build using VueJS and Bootstrap. You can view plates.
 
 ![Vue Logo](/docs/vue-logo.png "Vue Logo") ![Flask Logo](/docs/flask-logo.png "Flask Logo")
 
@@ -10,7 +10,7 @@ The goal of the task is to build a simple backend application that accepts valid
 * [Axios](https://github.com/axios/axios/) for backend communication
 
 # Usage
-Flask and sqlalchemy are required some imports to use.
+Some imports are required to use flask and sqlalchemy.
 
 from flask import Flask, request, jsonify<br />
 from flask_sqlalchemy import SQLAlchemy<br />
