@@ -78,7 +78,21 @@ Response:
 	{
 	    "msg": "the ÄE-A0574 is not a valid German plate"
 	}
+	
+Plate is inserted as ÄFGE-AÄ123. 422 status code and message are returned.
 
+Request:
+
+	{
+		"plate": "ÄFGE-AÄ123"
+	}
+
+Response:
+
+	{
+	    "msg": "the ÄFGE-AÄ123 is not a valid German plate"
+	}
+	
 Plate is inserted as ÄBE-AA231. 200 status code and message are returned.
 
 Request:
