@@ -19,7 +19,7 @@ from sqlalchemy import exc<br />
 # GET
 /plate <br />
 Posted plates are viewed with get request.
-![Data Structure](/docs/data.png "Data Structure")
+![Data Structure](/docs/data_structure.png "Data Structure")
 
 # POST
 /plate <br />
