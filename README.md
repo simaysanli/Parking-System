@@ -50,6 +50,20 @@ Response:
 	{
 	    "msg": "the ÄE-A2574 is a valid German plate"
 	}
+	
+Plate is inserted as ÄE-A2574 again. 500 status code and message returned.
+
+Request:
+
+	{
+		"plate": "ÄE-A2574"
+	}
+	
+Response:
+
+	{
+	    "msg": "plate is already registered"
+	}
 
 Plate is inserted as ÄE-A0574. 422 status code and message are returned.
 
@@ -78,6 +92,7 @@ Response:
 	{
 	    "msg": "the ÄBE-AA231 is a valid German plate"
 	}
+
 
 # DELETE
 /plate/<plate_id> <br />
