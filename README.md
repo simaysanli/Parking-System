@@ -4,7 +4,7 @@ The goal of the task is to build a simple backend application that accepts valid
 ![Vue Logo](/docs/vue-logo.png "Vue Logo") ![Flask Logo](/docs/flask-logo.png "Flask Logo")
 
 ## Features
-* [Flask](https://flask-restful.readthedocs.io/en/latest/) API with class-based secure resource routing
+* [Flask](https://flask-restful.readthedocs.io/en/latest/) 
 * [Vue.js](https://vuejs.org/)
 * [Vue Router](https://router.vuejs.org/)
 * [Axios](https://github.com/axios/axios/) for backend communication
